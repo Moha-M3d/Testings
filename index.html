@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testings</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            *, *::after, *::before {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                background-color: red;
+                width: 80%;
+                margin-inline: auto;
+                height: 3000px;
+            }
+            button {
+                margin-top: 1rem;
+            }
+            .wrapper { 
+                margin-top: 1rem;
+                overflow: scroll;
+                width: 400px;
+                max-height: 400px;
+                background-color: white;
+            }
+            .box {
+                box-shadow: 0 0 4px rgba(0, 0, 0, .13);
+                background-color: #fff;
+                padding: 1rem;
+                border-radius: 8px;
+           }
+            .slide-in {
+                animation: slide-in 300ms both;
+            }
+            @keyframes slide-in {
+                0% {
+                    transform: translateX(-400px);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
+            .collapsing {
+                transition: height 350ms ease;
+            }
+            #open-nav {
+                display: block;
+                padding: 1rem;
+                margin-top: 2rem;
+                border-radius: 8px;
+                background-color: #E1E0Ef;
+                color: #313131;
+                font-size: 1.2rem;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            #nav {
+                display: none;
+                overflow: hidden;
+                background-color: indianred;
+                border-radius: .5rem;
+                box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+            }
+            #nav li {
+                padding: .5rem;
+            }
+            .accordion {
+                border: 1px solid rgba(0, 0, 0, .2);
+                margin: 2rem;
+                border-radius: 8px;
+                background-color: #FFF;
+                padding: .75rem;
+            }
+            .accordion .question {
+                color: firebrick;
+                border-bottom: 1px solid firebrick;
+                padding: 8px;
+                margin: .5rem 0;
+                text-transform: capitalize;
+                border-radius: 4px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                transition: background-color 200ms;
+            }
+            .accordion .question:hover {
+                background-color: firebrick;
+                color: #FFF;
+            }
+            .accordion .answer {
+                display: none;
+                background-color: #f0f0f0;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            .accordion .answer p{
+                padding: .5rem;
+            }
+        </style>  
+    </head>
+    <body>
+        <button id="click-btn">ClickMe</button>
+        <div class="wrapper">
+            <p class="box">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio commodi id error iusto temporibus similique possimus minus natus a consectetur adipisci maxime saepe veniam, sed obcaecati doloribus itaque deserunt 
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi dicta delectus totam, error iure laboriosam consectetur iusto voluptate explicabo sed eum quos laudantium, obcaecati cumque, a ratione veritatis ex unde.
+                Quisquam ab vel quidem aut temporibus magni quis perferendis dolor iusto nam culpa, exercitationem ipsam voluptatibus accusamus itaque labore asperiores eos nihil facere non adipisci consequuntur! Ipsa, molestias optio. Iusto?
+                Ab quam harum quae obcaecati iste inventore ex excepturi a, ratione sint ea voluptates facere cupiditate, fugit eos esse quis, distinctio magni sequi. Enim officia culpa id, vitae autem dolore.
+                Molestiae blanditiis provident alias esse accusantium illo quia totam itaque, voluptatem ipsam quae dolorum? Assumenda quo libero alias aliquid reprehenderit minus consectetur sint odio velit dicta, omnis magni repellat amet.
+                Repudiandae repellendus nesciunt expedita quibusdam magni aperiam pariatur ullam, tempora inventore cupiditate consectetur minus tenetur quas fuga neque cum quis recusandae distinctio rerum nisi delectus alias aliquam minima aspernatur. Ullam?
+                Similique hic, dignissimos, obcaecati ipsam exercitationem quidem aliquid numquam repudiandae delectus beatae dolor? Ducimus commodi dolor quos quam repudiandae iure necessitatibus aperiam alias dolores atque. Quos, inventore? Hic, soluta voluptate?
+                Minima ratione fugiat, nam dolorem reiciendis enim voluptatum laudantium beatae excepturi cupiditate, exercitationem qui commodi ab deleniti consectetur unde, ducimus quis praesentium amet eos doloribus! Repellat culpa cum voluptate quibusdam.
+                Cum obcaecati perferendis aut voluptatibus minima, qui in, necessitatibus accusamus nisi dolores reiciendis fugit id. Quis temporibus, optio officia illo et enim! Suscipit quod praesentium illum cumque repellat obcaecati ut?
+                Consectetur illo obcaecati, officia tempore corrupti hic nisi doloremque repellat aliquid enim natus ratione voluptas doloribus! Maxime rem provident autem labore dolore quibusdam doloremque dolorem omnis unde! Praesentium, earum corporis.
+                Magnam exercitationem inventore sit porro quod cupiditate quas enim voluptate unde vitae, consequuntur harum pariatur sint minima eaque libero est vero, possimus, et sunt quasi iure itaque vel. A, qui!
+            </p>
+        </div>
+        <button id="open-nav">open nav</button>
+        <ul id="nav">
+            <li>first item</li>
+            <li>seocon item</li>
+            <li>third</li>
+            <li>fourth item</li>
+        </ul>
+        <div class="accordion">
+            <h2 class="question"><span>question 1</span><i class="fa-solid fa-chevron-down"></i></h2>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam sit laborum porro, harum quaerat inventore aliquid animi placeat sapiente consequatur neque recusandae quos. Tenetur numquam impedit asperiores tempore rem?</p>
+            </div>
+            <h2 class="question"><span>question 1</span><i class="fa-solid fa-chevron-down"></i></h2>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam sit laborum porro, harum quaerat inventore aliquid animi placeat sapiente consequatur neque recusandae quos. Tenetur numquam impedit asperiores tempore rem?</p>
+            </div>
+            <h2 class="question"><span>question 1</span><i class="fa-solid fa-chevron-down"></i></h2>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam sit laborum porro, harum quaerat inventore aliquid animi placeat sapiente consequatur neque recusandae quos. Tenetur numquam impedit asperiores tempore rem?</p>
+            </div>
+            <h2 class="question"><span>question 1</span><i class="fa-solid fa-chevron-down"></i></h2>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam sit laborum porro, harum quaerat inventore aliquid animi placeat sapiente consequatur neque recusandae quos. Tenetur numquam impedit asperiores tempore rem?</p>
+            </div>
+            <h2 class="question"><span>question 1</span><i class="fa-solid fa-chevron-down"></i></h2>
+            <div class="answer">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A quibusdam sit laborum porro, harum quaerat inventore aliquid animi placeat sapiente consequatur neque recusandae quos. Tenetur numquam impedit asperiores tempore rem?</p>
+            </div>
+            
+        </div>
+        <script src="./js/main.js" type="module"></script>    
+        <script src="./js/utils.js" type="module"></script>    
+    </body>
+</html>
